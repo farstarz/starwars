@@ -1,0 +1,9 @@
+GitHub
+
+create repo
+clone repo
+create issue in GitHub - this will also add the issue to Zenhub
+    describe the issue
+    assign the issue
+    Set the complexity to Estimate
+    prevent self merging of pull request
