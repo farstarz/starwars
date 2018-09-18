@@ -25,3 +25,28 @@ body, html {
 .blankRow {
     height: 40%;
 }
+
+#fireRange{
+  /* position: absolute; */
+  /* top: 50px; */
+  position: relative;
+  text-align: left;
+  left: -30px;
+}
+
+#weapon {
+  /* position: absolute; */
+  left: 0px;
+  /* text-align: left; */
+  height: 50px;
+  width: 100px;
+}
+
+#blankPlayRow {
+  height: 12px;
+}
+
+/* element{
+  left: 0px;
+  text-align: left;
+} */

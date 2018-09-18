@@ -19,6 +19,9 @@ $(document).ready(function(){
             enemy.healthPoints=enemy.healthPoints-hero.attackPower;
             hero.attackPower=hero.attackPower+hero.counterAttackPower;
             hero.attackNumber++;
+            $("#fireRange").html("<img src=\"./assets/images/strike1.PNG\" alt=\"strike1\" id=\"weapon\">");
+            // $("#weapon").css({});
+            $("#fireRange").animate({left: "70px"}, 5000);
         }
         counterAttack(hero){
             hero.healthPoints-=enemy.counterAttackPower;
