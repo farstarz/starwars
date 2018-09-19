@@ -14,22 +14,28 @@
     <script src="./assets/game.js"></script>
 </head>
 <body class="bg">
-    <button type="button" class="btn btn-primary char" id="obk" value=obiWanKenobi>obk</button>
-    <button type="button" class="btn btn-primary char" id="ls" value=lukeSkywalker>ls</button>
-    <button type="button" class="btn btn-primary char" id="ds" value=darthStdious>ds</button>
-    <button type="button" class="btn btn-primary char" id="dm" value=darthMaul>dm</button>
+    <button type="button" class="btn btn-primary char" id="hp" value=obiWanKenobi>hp</button>
+    <button type="button" class="btn btn-primary char" id="hg" value=lukeSkywalker>hg</button>
+    <button type="button" class="btn btn-primary char" id="ll" value=darthStdious>ll</button>
+    <button type="button" class="btn btn-primary char" id="gl" value=darthMaul>gl</button>
+    <button type="button" class="btn btn-primary char" id="sn" value=darthMaul>sn</button>
     <button type="button" class="btn btn-primary role" id="hero" value="hero">hero</button>
     <button type="button" class="btn btn-primary role" id="enemy" value="enemy">enemy</button>
     <button type="button" class="btn btn-primary action" id="attack">attack</button>
     <div class="row blankRow"></div>
     <div class="row" id="arena">
-        <div class="col-md-1 pillar"></div>
+        <!-- <div class="col-md-1 pillar"></div> -->
         <div class="col-md-3 pillar">
           <div class="row" id="blankPlayRow"></div>
           <div class="row" id="player1"></div>
         </div>
-        <div class="col-md-4 pillar" id="fireRange"></div>
         <div class="col-md-3 pillar">
+          <div id="fireRange1"></div>
+        </div>
+        <div class="col-md-3 pillar">
+          <div id="fireRange2"></div>
+        </div>
+        <div class="col-md-2 pillar">
           <div class="row" id="blankPlayRow"></div>
           <div class="row" id="player2"></div>
         </div>
