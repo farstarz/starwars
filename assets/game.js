@@ -16,30 +16,31 @@ $(document).ready(function(){
         }
         // reduce the health point of enemy by attackPower and add base attack power to attackPower
         attack(enemy){
-            enemy.healthPoints=enemy.healthPoints-hero.attackPower;
-            hero.attackPower=hero.attackPower+hero.counterAttackPower;
-            hero.attackNumber++;
-            var rate = 200;
-            var i = 0;
-            var firing1 = setInterval(function(){$("#fireRange1").html("<img src=\"./assets/images/strike1.PNG\" alt=\"strike1\" class=\"weapon\">");
+          $("#options").empty();
+          enemy.healthPoints=enemy.healthPoints-hero.attackPower;
+          hero.attackPower=hero.attackPower+hero.counterAttackPower;
+          hero.attackNumber++;
+          var rate = 200;
+          var i = 0;
+          var firing1 = setInterval(function(){$("#fireRange1").html("<img src=\"./assets/images/strike1.PNG\" alt=\"strike1\" class=\"weapon\">");
 
-            // i++; console.log(i);
+          // i++; console.log(i);
             var firing2 = setTimeout(function(){$("#fireRange1").html("<img src=\"./assets/images/strike2.PNG\" alt=\"strike2\" class=\"weapon\">");
 
-              i++; console.log(i*100);},rate);
-              // empty range
-              setTimeout(function(){$("#fireRange1").empty();},2*rate-20);
-            },rate*2);
+            i++; console.log(i*100);},rate);
+            // empty range
+            setTimeout(function(){$("#fireRange1").empty();},2*rate-20);
+          },rate*2);
 
-            var firing3 = setInterval(function(){$("#fireRange2").html("<img src=\"./assets/images/strike1R.PNG\" alt=\"strike1R\" class=\"weapon\">");
+          var firing3 = setInterval(function(){$("#fireRange2").html("<img src=\"./assets/images/strike1R.PNG\" alt=\"strike1R\" class=\"weapon\">");
 
-              // i++; console.log(i);
-              var firing4 = setTimeout(function(){$("#fireRange2").html("<img src=\"./assets/images/strike2R.PNG\" alt=\"strike2R\" class=\"weapon\">");
-                // i++,; console.log(i*100);
-              },rate);
-              // empty range
-              setTimeout(function(){$("#fireRange2").empty();},2*rate-20);
-            },rate*2);
+            // i++; console.log(i);
+            var firing4 = setTimeout(function(){$("#fireRange2").html("<img src=\"./assets/images/strike2R.PNG\" alt=\"strike2R\" class=\"weapon\">");
+              // i++,; console.log(i*100);
+            },rate);
+            // empty range
+            setTimeout(function(){$("#fireRange2").empty();},2*rate-20);
+          },rate*2);
             // function fire(){
             //   $("#fireRange").html("<h2>"+i+"</h2>");
             //   i++;
@@ -51,42 +52,41 @@ $(document).ready(function(){
               // $("#fireRange").delay(2*time).empty();
                  
             
-            setTimeout(function(){
-              clearInterval(firing1);
-              $("#fireRange1").empty();
-              clearInterval(firing3);
-              $("#fireRange2").empty();
-            }, 2000);
+          setTimeout(function(){
+            clearInterval(firing1);
+            $("#fireRange1").empty();
+            clearInterval(firing3);
+            $("#fireRange2").empty();
+          }, 2000);
             
             // $("#weapon").css({});
             // $("#fireRange").animate({left: "70px"}, 5000);
-          }
+        }
             
         counterAttack(hero){
             hero.healthPoints-=enemy.counterAttackPower;
             
         }
         chooseRole(){
-            if(chooseHeroRole==="hero"){
-				this.role = "Hero";
-                hero = this;
-                
-                $("#player1").empty().append("<img src="+this.imageL+" alt=\"left image\" class=\"playerImage\"></img>");
-                // console.log(this);
-				// console.log(hero);
-            }else{
-				this.role = "enemy";
-				enemy=this;
-            	$("#player2").empty().append("<img src="+this.imageR+ "alt=\"left image\" class=\"playerImage\"></img>");
-				// console.log(this);
-				// console.log(enemy);
-            }
+          if(chooseHeroRole==="hero"){
+				    this.role = "Hero";
+            hero = this;
+            $("#player1").empty().append("<img src="+this.imageL+" alt=\"left image\" class=\"playerImage\" id=\"attack\"></img>");
+            // console.log(this);
+				    // console.log(hero);
+          }else{
+				    this.role = "enemy";
+				    enemy=this;
+          	$("#player2").empty().append("<img src="+this.imageR+ "alt=\"left image\" class=\"playerImage\"></img>");
+				    // console.log(this);
+			    	// console.log(enemy);
+          }
         }
         reset(){
-            this.role="default";
-            this.attackPower= this.counterAttackPower;
-            this.attackNumber=0;
-            gameStart = false;
+          this.role="default";
+          this.attackPower= this.counterAttackPower;
+          this.attackNumber=0;
+          gameStart = false;
         }
     };
     
@@ -105,11 +105,14 @@ $(document).ready(function(){
 		$(".role").on("click", function(){chooseHeroRole=this.value;})
     function updateScore(){
       if(hero.healthPoints>enemy.healthPoints && enemy.healthPoints<0){
-        $("#scores").empty().html("<h2>"+hero.name+" Wins!</h2>");
+        $("#scoresL").empty().html("<h2>"+hero.name+" Wins!</h2>");
+        $("#scoresR").empty();
       }else if(hero.healthPoints<enemy.healthPoints && hero.healthPoints<0){
-        $("#scores").empty().html("<h2>"+enemy.name+" Wins!</h2>");
+        $("#scoresL").empty();
+        $("#scoresR").empty().html("<h2>"+enemy.name+" Wins!</h2>");
       }else{
-        $("#scores").html("<h4>"+hero.name+": "+hero.healthPoints+"</h4> <h4 class=\"scoresR\">"+enemy.name+": "+enemy.healthPoints+"</h4>");
+        $("#scoresL").html("<h4>"+hero.name+": "+hero.healthPoints+"</h4>");
+        $("#scoresR").html("<h4>"+enemy.name+": "+enemy.healthPoints+"</h4>");
       };
     }
 		$("#hp").on("click", function(){ harry.chooseRole();});

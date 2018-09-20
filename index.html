@@ -14,21 +14,29 @@
     <script src="./assets/game.js"></script>
 </head>
 <body class="bg">
-    <button type="button" class="btn btn-primary char" id="hp" value=obiWanKenobi>hp</button>
-    <button type="button" class="btn btn-primary char" id="hg" value=lukeSkywalker>hg</button>
-    <button type="button" class="btn btn-primary char" id="ll" value=darthStdious>ll</button>
-    <button type="button" class="btn btn-primary char" id="gl" value=darthMaul>gl</button>
-    <button type="button" class="btn btn-primary char" id="sn" value=darthMaul>sn</button>
-    <button type="button" class="btn btn-primary role" id="hero" value="hero">hero</button>
-    <button type="button" class="btn btn-primary role" id="enemy" value="enemy">enemy</button>
-    <button type="button" class="btn btn-primary action" id="attack">attack</button>
-    <div class="row" id="scores"></div>
+
+    <button type="button" class="btn btn-dark role" id="hero" value="hero">Choose Hero</button>
+    <button type="button" class="btn btn-dark role" id="enemy" value="enemy">Choose Enemy</button>
+    <button type="button" class="btn btn-dark action" id="attack">Attack</button>
+    <!-- <button type="button" class="btn btn-primary start" id="start">Start</button> -->
+    <div class="row">
+      <div class="col-md-6 scores" id="scoresL"></div>
+      <div class="col-md-6 scores" id="scoresR"></div>
+    </div>
+    <div class="row d-flex justify-content-around" id="options">
+      <button type="button" class="btn btn-dark char" id="hp" value=obiWanKenobi>Harry Potter</button>
+      <button type="button" class="btn btn-dark char" id="hg" value=lukeSkywalker>Hermionie Granger</button>
+      <button type="button" class="btn btn-dark char" id="ll" value=darthStdious>Luna Lovegood</button>
+      <button type="button" class="btn btn-dark char" id="gl" value=darthMaul>Gilderoy Lockhart</button>
+      <button type="button" class="btn btn-dark char" id="sn" value=darthMaul>Severus Snape</button>
+    </div>
     <div class="row blankRow"></div>
     <div class="row" id="arena">
         <!-- <div class="col-md-1 pillar"></div> -->
         <div class="col-md-3 pillar">
           <div class="row" id="blankPlayRow"></div>
           <div class="row" id="player1"></div>
+
         </div>
         <div class="col-md-3 pillar">
           <div id="fireRange1"></div>

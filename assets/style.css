@@ -1,5 +1,10 @@
+@font-face{
+  font-family:"hogwards";
+  src: url("./fonts/HARRYP__.TTF");
+}
 body, html {
     height: 100%;
+    font-family: "hogwards", sans-serif;
 }
 .bg {
     background-image: url("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-347677.jpg");
@@ -7,7 +12,15 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: "hogwards";
 }
+
+#options{
+  /* width: 100%;
+  display: flex;
+  align-content: space-between; */
+}
+
 #arena {
     text-align: center;
     /* height: 100%; */
@@ -21,15 +34,20 @@ body, html {
     height: 200px;
     /* width: 100%; */
 }
-
-.scoresR{
+#scoresL{
+  text-align: left;
+}
+#scoresR{
   text-align: right;
 }
 
-#scores {
+.scores {
   height: 10%;
-  display: flex;
-  align-content: center;
+  /* display: flex; */
+  /* align-content: center; */
+  font-family: hogwards;
+  color:  #e9dbb8;
+
 }
 .blankRow {
     height: 30%;
