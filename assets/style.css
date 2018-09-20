@@ -22,8 +22,17 @@ body, html {
     /* width: 100%; */
 }
 
+.scoresR{
+  text-align: right;
+}
+
+#scores {
+  height: 10%;
+  display: flex;
+  align-content: center;
+}
 .blankRow {
-    height: 40%;
+    height: 30%;
 }
 
 #fireRange1{
